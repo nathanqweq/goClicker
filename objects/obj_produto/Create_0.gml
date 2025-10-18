@@ -16,3 +16,4 @@ custo = custo_base
 comprado = false
 efeito_comprar = false
 
+lucro = lucro_base

@@ -31,18 +31,27 @@ draw_rectangle_color(_x1, _y1, _x2, _y2, c_gray, c_gray, c_gray, c_gray, false)
 var _progresso = (timer / tempo) * _larg
 draw_rectangle_color(_x1, _y1, _x1+_progresso, _y2, c_green, c_green, c_green, c_green, false)
 
+// desenhando o quanto produto rende
+// ajuste de alinhamento
+draw_set_halign(2)
+var _str = "R$ " + string_format(lucro, 0, 2)
+draw_text(_x2, _y1+sprite_height / 8, _str)
+// voltando o alinhamento para o centro
+draw_set_halign(1)
+
 //Desenhando custo
 // desenhando fundo
 _x1 = x + 42
 _y1 = y + 8
 _x2 = _x1 + 64
 _y2 = _y1 + 32
-var _cor = c_green
+// definindo cor na possibilidade de comprar
+var _cor = global.gold >= custo ? c_green : c_grey
 var _str = string_format(custo, 0, 0)
 
 // desenha borda caso mouse em cima
 if (efeito_comprar){
-	draw_rectangle_color(_x1-1, _y1-1, _x2+1, _y2+1, _cor, _cor, _cor, _cor, false)
+	draw_rectangle_color(_x1-1, _y1-1, _x2+1, _y2+1, c_yellow, c_yellow, c_yellow, c_yellow, false)
 }
 draw_rectangle_color(_x1, _y1, _x2, _y2, _cor, _cor, _cor, _cor, false)
 draw_text_transformed(_x1 + 32, _y1 + 16, "R$ " + _str, 1, 1, 0)
