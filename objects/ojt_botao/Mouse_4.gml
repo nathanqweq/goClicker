@@ -1,0 +1,1 @@
+global.exibe_managers = !global.exibe_managers

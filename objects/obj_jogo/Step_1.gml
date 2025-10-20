@@ -6,3 +6,9 @@ if (keyboard_check(vk_space)) {
 } else {
 	global.game_spd = 1
 }
+
+if (keyboard_check_pressed(ord("L"))) {
+	global.gold += 1000
+}
+
+gerencia_produtos()
