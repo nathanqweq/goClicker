@@ -28,6 +28,30 @@ lucro = lucro_base
 // inserindo na lista de produtos
 global.produtos[indice] = id
 
+incremento = 1.07
+
+comprar = function() {
+	// tira dinheiro
+	global.gold -= custo
+	comprado = true
+	
+	var _custo_atual = floor(custo_base * (power(incremento, level)))
+				
+	//aumentando custo
+	custo += _custo_atual
+	// ajustando level
+	level ++
+	// ajustando lucro
+	lucro = lucro_base * level
+}
+
+acao = function(){
+	timer = 0
+	clicar = tem_manager
+			
+	// dando dinheiro
+	global.gold += lucro
+}
 
 // Desenhando produto
 desenha_produto = function(){

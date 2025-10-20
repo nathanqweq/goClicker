@@ -6,11 +6,18 @@ produtos_y = 0 + base_y
 
 cria_produtos = function(_qtd = 1) {
 	for (var i = 0; i < _qtd; i++){
-		produtos[i] = instance_create_layer(0, 0, layer, obj_produto, {indice : i})
+		
+		// struct com meus dados
+		var _struct = {
+			indice : i,
+			custo_base : i + 4
+		}
+		
+		produtos[i] = instance_create_layer(0, 0, layer, obj_produto, _struct)
 		with(produtos[i]){
 			indice	   = i
 			tempo	   = i + 1
-			custo	   = i + 1
+			custo	   = custo_base
 			lucro_base = i + 1
 		}
 	}

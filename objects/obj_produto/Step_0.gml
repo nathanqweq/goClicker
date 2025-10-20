@@ -4,11 +4,7 @@ if (comprado) {
 		timer += global.framerate
 	
 		if (timer > tempo) {
-			timer = 0
-			clicar = tem_manager
-			
-			// dando dinheiro
-			global.gold += lucro
+			acao()
 		}
 	}
 }
@@ -37,16 +33,7 @@ if (_mouse_sobre) {
 		if (_mouse_click){
 			// checa se tem dinheiro
 			if (global.gold >= custo){
-				// tira dinheiro
-				global.gold -= custo
-				comprado = true
-				
-				//aumentando custo
-				custo *= 2
-				// ajustando level
-				level ++
-				// ajustando lucro
-				lucro = lucro_base * level
+				comprar()
 			}
 		}
 	}
