@@ -39,14 +39,36 @@ rolagem_produtos = function() {
 	produtos_y = clamp(produtos_y, -_max, base_y)	
 }
 
-gerencia_produtos = function() {
+rolagem = function(_val = 10){
+	var _qtd = 0
 	
-	rolagem_produtos()
+	// Rolando com o scroll
+	if (mouse_wheel_down()) {
+		_qtd = -_val
+	}
+	if (mouse_wheel_up()) {
+		_qtd = _val
+	}
+	
+	return _qtd
+}
+
+gerencia_produtos = function() {
+	static _meu_y = 0
+	var _alt = sprite_get_height(spr_produto)
+	var _larg = sprite_get_width(spr_produto)
+	var _marg = 20
+	_meu_y += rolagem(30)
+	
+	// limite de scroll
+	var _qtd = array_length(produtos)
+	var _max = (_alt * _qtd + (_marg * _qtd) + _marg - room_height)
+	_meu_y = clamp(_meu_y, -_max, 0)
+	//rolagem_produtos()
 	
 	for (var i = 0; i < array_length(produtos); i++){
-		var _marg = 20
 		var _x = 160
-		var _y = produtos_y + _marg + ((i * 96) + (i * _marg))
+		var _y = _meu_y + _marg + ((i * _alt) + (i * _marg))
 		
 		with(produtos[i]){
 			x = _x
