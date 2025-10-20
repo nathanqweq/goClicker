@@ -36,6 +36,7 @@
   "name":"goClick",
   "resources":[
     {"id":{"name":"obj_jogo","path":"objects/obj_jogo/obj_jogo.yy",},},
+    {"id":{"name":"obj_manager","path":"objects/obj_manager/obj_manager.yy",},},
     {"id":{"name":"obj_produto","path":"objects/obj_produto/obj_produto.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"inicializar","path":"scripts/inicializar/inicializar.yy",},},

@@ -8,7 +8,7 @@ draw_sprite(spr_item, 0, x, y - 16)
 draw_set_valign(1)
 draw_set_halign(1)
 
-// cenmtro do level
+// centro do level
 var _x = x
 var _y = y+24
 
@@ -56,7 +56,19 @@ if (efeito_comprar){
 draw_rectangle_color(_x1, _y1, _x2, _y2, _cor, _cor, _cor, _cor, false)
 draw_text_transformed(_x1 + 32, _y1 + 16, "R$ " + _str, 1, 1, 0)
 
+// desenhando o tempo de execução
+// descobrindo quantos segundos
+var _s = floor((tempo - timer) % 60)
+var _m = (tempo - timer) div 60
+var _h = ((tempo - timer) div 60) div 60
 
+draw_set_halign(2)
+// definindo a exibição de tempo
+var _seg = _s > 9 ? _s : "0" + string(_s)
+var _min = _m > 9 ? _m : "0" + string(_m)
+var _hor = _h > 9 ? _h : "0" + string(_h)
+draw_text(x+sprite_width-8, _y1+16, string("{0}:{1}:{2}",_hor, _min, _seg))
+draw_set_halign(1)
 
 // resetando alinhamento do texto
 draw_set_valign(-1)

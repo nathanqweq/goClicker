@@ -21,3 +21,9 @@ function atualiza_tempo() {
 
 // Variaveis de dinheiro
 global.gold = 1
+
+// informação dos managers
+global.managers = [0, 0, 0, 0, 0, 0, 0, 0]
+
+// listas de produtos
+global.produtos = [0, 0, 0, 0, 0, 0, 0, 0]

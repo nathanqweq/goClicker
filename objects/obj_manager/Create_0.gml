@@ -1,0 +1,1 @@
+comprado = global.managers[indice]

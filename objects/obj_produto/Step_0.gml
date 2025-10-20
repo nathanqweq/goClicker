@@ -6,15 +6,9 @@ if (comprado) {
 		if (timer > tempo) {
 			timer = 0
 			clicar = tem_manager
-			// retorna dinheiro
-			global.gold += lucro
 			
-			// aumentando custo
-			custo *= 2
-			// ajusta o lucro
-			level++
-			//lucro com base no nivel
-			lucro = lucro_base  * level
+			// dando dinheiro
+			global.gold += lucro
 		}
 	}
 }
@@ -46,6 +40,13 @@ if (_mouse_sobre) {
 				// tira dinheiro
 				global.gold -= custo
 				comprado = true
+				
+				//aumentando custo
+				custo *= 2
+				// ajustando level
+				level ++
+				// ajustando lucro
+				lucro = lucro_base * level
 			}
 		}
 	}
