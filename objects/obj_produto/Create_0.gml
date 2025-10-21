@@ -5,6 +5,9 @@ level = 0
 // mais informações do produto
 timer = 0
 
+meu_x = 0
+meu_y = 0
+
 // definindo se devo clicar
 clicar = false
 

@@ -1,6 +1,13 @@
 // Lista de produtos
 produtos = []
 
+// Dados da minha surface de produtos
+surf_prod   = noone
+surf_prod_w = 500
+surf_prod_h = 500
+surf_prod_x = 100
+surf_prod_y = 100
+
 base_y = 80
 produtos_y = 0 + base_y
 
@@ -56,7 +63,7 @@ gerencia_produtos = function() {
 	//rolagem_produtos()
 	
 	for (var i = 0; i < array_length(produtos); i++){
-		var _x = 160
+		var _x = 24
 		var _y = _meu_y + _marg + ((i * _alt) + (i * _marg))
 		
 		with(produtos[i]){
@@ -65,6 +72,36 @@ gerencia_produtos = function() {
 		}
 	}
 }
+
+// Criando surface para os produtos
+desenha_produtos = function(){
+	//Criando surface para desenhar os produtos
+	// cheacando se surface existe
+	if (surface_exists(surf_prod)) {
+		// configura surface
+		surface_set_target(surf_prod)
+		draw_clear_alpha(c_black, 0)
+		
+		draw_rectangle_color(0, 0, surf_prod_w, surf_prod_h, c_yellow, c_yellow, c_yellow, c_yellow, false)
+		
+		// desenhando produto
+		with(obj_produto){
+			desenha_produto()
+			meu_x = other.surf_prod_x
+			meu_y = other.surf_prod_y
+		}
+		
+		// reseta surface
+		surface_reset_target()
+		
+		// desenhando surtface
+		draw_surface(surf_prod, surf_prod_x, surf_prod_y)
+	} else {
+		//crio ela
+		surf_prod = surface_create(surf_prod_w, surf_prod_h)
+	}
+}
+
 
 // Cria a quantidade de produtos na struct
 cria_produtos(array_length(global.struct_produtos))
