@@ -42,6 +42,7 @@
     {"id":{"name":"obj_produto","path":"objects/obj_produto/obj_produto.yy",},},
     {"id":{"name":"ojt_botao","path":"objects/ojt_botao/ojt_botao.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"id":{"name":"funcoes","path":"scripts/funcoes/funcoes.yy",},},
     {"id":{"name":"inicializar","path":"scripts/inicializar/inicializar.yy",},},
     {"id":{"name":"spr_botao","path":"sprites/spr_botao/spr_botao.yy",},},
     {"id":{"name":"spr_item","path":"sprites/spr_item/spr_item.yy",},},

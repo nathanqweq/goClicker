@@ -44,3 +44,4 @@ while(true) {
 }
 // Converte texto para json
 global.struct_produtos = json_parse(_txt).items
+

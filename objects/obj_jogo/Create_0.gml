@@ -6,13 +6,9 @@ produtos_y = 0 + base_y
 
 cria_produtos = function(_qtd = 1) {
 	for (var i = 0; i < _qtd; i++){
-		
 		// struct com meus dados json
 		var _struct = global.struct_produtos[i]
-		
 		produtos[i] = instance_create_layer(0, 0, layer, obj_produto, _struct)
-		with(produtos[i]){
-		}
 	}
 }
 

@@ -87,7 +87,7 @@ desenha_produto = function(){
 	// desenhando o quanto produto rende
 	// ajuste de alinhamento
 	draw_set_halign(2)
-	var _str = "R$ " + string_format(lucro, 0, 2)
+	var _str = convert_num(lucro)
 	draw_text(_x2, _y1+sprite_height / 8, _str)
 	// voltando o alinhamento para o centro
 	draw_set_halign(1)
@@ -100,14 +100,14 @@ desenha_produto = function(){
 	_y2 = _y1 + 32
 	// definindo cor na possibilidade de comprar
 	var _cor = global.gold >= custo ? c_green : c_grey
-	var _str = string_format(custo, 0, 0)
+	var _str = convert_num(custo)
 
 	// desenha borda caso mouse em cima
 	if (efeito_comprar){
 		draw_rectangle_color(_x1-1, _y1-1, _x2+1, _y2+1, c_yellow, c_yellow, c_yellow, c_yellow, false)
 	}
 	draw_rectangle_color(_x1, _y1, _x2, _y2, _cor, _cor, _cor, _cor, false)
-	draw_text_transformed(_x1 + 32, _y1 + 16, "R$ " + _str, 1, 1, 0)
+	draw_text_transformed(_x1 + 32, _y1 + 16, _str, 1, 1, 0)
 
 	// desenhando o tempo de execução
 	// descobrindo quantos segundos
