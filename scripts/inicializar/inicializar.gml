@@ -22,7 +22,7 @@ function atualiza_tempo() {
 global.exibe_managers = false
 
 // Variaveis de dinheiro
-global.gold = 1
+global.gold = 5
 
 // informação dos managers
 global.managers = [0, 0, 0, 0, 0, 0, 0, 0]

@@ -57,7 +57,9 @@ acao = function(){
 desenha_produto = function(){
 	// Desenhando bloco do produto
 	draw_self()
-	draw_sprite(spr_item, 0, x, y - 16)
+	draw_set_font(fnt_texto)
+	// Desenha icone do produto
+	draw_sprite(spr_item, indice, x, y - 16)
 	
 	// variaveis para o level
 	draw_set_valign(1)
@@ -73,7 +75,7 @@ desenha_produto = function(){
 	//Variaveis para barra de progresso
 	var _x1 = x + 42
 	var _y1 = y - 32
-	var _larg = sprite_width / 1.5
+	var _larg = sprite_width / 1.2
 	var _x2 = _x1 + _larg
 	var _y2 = _y1 + sprite_height / 4
 	// Desenhando as bordas da barra
@@ -88,7 +90,7 @@ desenha_produto = function(){
 	// ajuste de alinhamento
 	draw_set_halign(2)
 	var _str = convert_num(lucro)
-	draw_text(_x2, _y1+sprite_height / 8, _str)
+	draw_text(_x2 - 4, _y1+sprite_height / 8, _str)
 	// voltando o alinhamento para o centro
 	draw_set_halign(1)
 
@@ -96,7 +98,8 @@ desenha_produto = function(){
 	// desenhando fundo
 	_x1 = x + 42
 	_y1 = y + 8
-	_x2 = _x1 + 64
+	var _larg = sprite_width / 2
+	_x2 = _x1 + _larg
 	_y2 = _y1 + 32
 	// definindo cor na possibilidade de comprar
 	var _cor = global.gold >= custo ? c_green : c_grey
@@ -107,12 +110,12 @@ desenha_produto = function(){
 		draw_rectangle_color(_x1-1, _y1-1, _x2+1, _y2+1, c_yellow, c_yellow, c_yellow, c_yellow, false)
 	}
 	draw_rectangle_color(_x1, _y1, _x2, _y2, _cor, _cor, _cor, _cor, false)
-	draw_text_transformed(_x1 + 32, _y1 + 16, _str, 1, 1, 0)
+	draw_text_transformed(_x1 + _larg/2, _y1 + 16, _str, 1, 1, 0)
 
 	// desenhando o tempo de execução
 	// descobrindo quantos segundos
 	var _s = floor((tempo - timer) % 60)
-	var _m = (tempo - timer) div 60
+	var _m = ((tempo - timer) div 60) % 60
 	var _h = ((tempo - timer) div 60) div 60
 
 	draw_set_halign(2)
@@ -120,10 +123,30 @@ desenha_produto = function(){
 	var _seg = _s > 9 ? _s : "0" + string(_s)
 	var _min = _m > 9 ? _m : "0" + string(_m)
 	var _hor = _h > 9 ? _h : "0" + string(_h)
-	draw_text(x+sprite_width-8, _y1+16, string("{0}:{1}:{2}",_hor, _min, _seg))
+	draw_text(x+sprite_width-24, _y1+16, string("{0}:{1}:{2}",_hor, _min, _seg))
 	draw_set_halign(1)
-
-	// resetando alinhamento do texto
 	draw_set_valign(-1)
 	draw_set_halign(-1)
+	
+	if (efeito_comprar){
+		exibe_info()
+	}
+	
+	draw_set_font(-1)
+}
+
+// Exibindo informações do produto
+exibe_info = function() {
+	var _x1 = x + sprite_width + 12
+	var _y1 = y - sprite_height/2
+	var _marg = 5
+	
+	// Desenhando borda
+	draw_sprite_stretched(spr_info, 0, _x1, _y1, sprite_width, sprite_height)
+	
+	draw_text(_x1 + _marg, _y1 + _marg, nome)
+	
+	// Descrição
+	draw_text_ext(_x1 + _marg, _y1 + 30, descricao, 20, sprite_width - _marg * 2)
+	
 }
