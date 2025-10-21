@@ -7,18 +7,11 @@ produtos_y = 0 + base_y
 cria_produtos = function(_qtd = 1) {
 	for (var i = 0; i < _qtd; i++){
 		
-		// struct com meus dados
-		var _struct = {
-			indice : i,
-			custo_base : i + 4
-		}
+		// struct com meus dados json
+		var _struct = global.struct_produtos[i]
 		
 		produtos[i] = instance_create_layer(0, 0, layer, obj_produto, _struct)
 		with(produtos[i]){
-			indice	   = i
-			tempo	   = i + 1
-			custo	   = custo_base
-			lucro_base = i + 1
 		}
 	}
 }
@@ -62,7 +55,7 @@ gerencia_produtos = function() {
 	
 	// limite de scroll
 	var _qtd = array_length(produtos)
-	var _max = (_alt * _qtd + (_marg * _qtd) + _marg - room_height)
+	var _max = (_alt * _qtd) + (_marg * _qtd) + _marg - room_height
 	_meu_y = clamp(_meu_y, -_max, 0)
 	//rolagem_produtos()
 	
@@ -77,4 +70,5 @@ gerencia_produtos = function() {
 	}
 }
 
-cria_produtos(10)
+// Cria a quantidade de produtos na struct
+cria_produtos(array_length(global.struct_produtos))
