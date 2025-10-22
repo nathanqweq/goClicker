@@ -72,8 +72,11 @@ desenha_produto = function(){
 
 	// Desenhando fundo do level
 	draw_ellipse_color(_x-24, _y-16, _x+24, _y+16, c_dkgray, c_dkgray, false)
+	
+	gpu_set_colorwriteenable(1, 1, 1, 0)
 	// Desenhando level
 	draw_text(_x, _y, level)
+	gpu_set_colorwriteenable(1, 1, 1, 1)
 	
 	//Variaveis para barra de progresso
 	var _x1 = x + 42
@@ -93,6 +96,7 @@ desenha_produto = function(){
 	// ajuste de alinhamento
 	draw_set_halign(2)
 	var _str = convert_num(lucro)
+	gpu_set_colorwriteenable(1, 1, 1, 0)
 	draw_text(_x2 - 4, _y1+sprite_height / 8, _str)
 	// voltando o alinhamento para o centro
 	draw_set_halign(1)
@@ -115,6 +119,7 @@ desenha_produto = function(){
 	draw_rectangle_color(_x1, _y1, _x2, _y2, _cor, _cor, _cor, _cor, false)
 	draw_text_transformed(_x1 + _larg/2, _y1 + 16, _str, 1, 1, 0)
 
+
 	// desenhando o tempo de execução
 	// descobrindo quantos segundos
 	var _s = floor((tempo - timer) % 60)
@@ -127,6 +132,7 @@ desenha_produto = function(){
 	var _min = _m > 9 ? _m : "0" + string(_m)
 	var _hor = _h > 9 ? _h : "0" + string(_h)
 	draw_text(x+sprite_width-24, _y1+16, string("{0}:{1}:{2}",_hor, _min, _seg))
+	gpu_set_colorwriteenable(1, 1, 1, 1)
 	draw_set_halign(1)
 	draw_set_valign(-1)
 	draw_set_halign(-1)
@@ -147,9 +153,11 @@ exibe_info = function() {
 	// Desenhando borda
 	draw_sprite_stretched(spr_info, 0, _x1, _y1, sprite_width, sprite_height)
 	
+	gpu_set_colorwriteenable(1, 1, 1, 0)
 	draw_text(_x1 + _marg, _y1 + _marg, nome)
 	
 	// Descrição
 	draw_text_ext(_x1 + _marg, _y1 + 30, descricao, 20, sprite_width - _marg * 2)
+	gpu_set_colorwriteenable(1, 1, 1, 1)
 	
 }

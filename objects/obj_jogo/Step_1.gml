@@ -12,3 +12,4 @@ if (keyboard_check_pressed(ord("L"))) {
 }
 
 gerencia_produtos()
+gerencia_managers()

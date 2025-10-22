@@ -2,83 +2,83 @@
   "items": [
     {
       "indice": 0,
-      "nome": "Morango",
+      "nome": "Memória RAM",
       "custo_base": 4,
       "tempo": 1,
       "lucro_base": 1,
-      "descricao": "Um morango bem saboroso."
+      "descricao": "Guarda tudo... até o momento em que você desliga. A amnésia mais cara do mercado!"
     },
     {
       "indice": 1,
-      "nome": "Bala",
+      "nome": "CPU",
       "custo_base": 60,
       "tempo": 3,
       "lucro_base": 60,
-      "descricao": "Bala azeda deliciosa!"
+      "descricao": "Faz tudo, reclama de nada. Exceto quando chega a 100% de uso — aí ela surta."
     },
     {
       "indice": 2,
-      "nome": "Cereja",
+      "nome": "SSD",
       "custo_base": 720,
       "tempo": 6,
       "lucro_base": 540,
-      "descricao": "Cereja com cobertura a escolha."
+      "descricao": "Tão rápido que você nem vê seus arquivos abrirem. Só cuidado pra não piscar."
     },
     {
       "indice": 3,
-      "nome": "Bengala doce",
+      "nome": "GPU",
       "custo_base": 8640,
       "tempo": 12,
       "lucro_base": 4320,
-      "descricao": "Uma begala doce, ideal para comer no fim do ano."
+      "descricao": "Desenha gráficos lindos, mas também derrete orçamentos e fontes de energia."
     },
     {
       "indice": 4,
-      "nome": "Donut",
+      "nome": "Servidor",
       "custo_base": 103680,
       "tempo": 12,
       "lucro_base": 51840,
-      "descricao": "O doce favorito do Homer Simplson."
+      "descricao": "Trabalha 24/7, nunca dorme e só é lembrado quando cai. Um verdadeiro herói sem capa."
     },
     {
       "indice": 5,
-      "nome": "Cheesecake",
+      "nome": "Cluster de Dados",
       "custo_base": 1244160,
       "tempo": 96,
       "lucro_base": 622080,
-      "descricao": "Cheesecake ou torta de queijo é uma torta doce feita com queijo cremoso."
+      "descricao": "Um conjunto de servidores unidos... porque até as máquinas precisam de amigos."
     },
     {
       "indice": 6,
-      "nome": "Sorvete",
+      "nome": "Container",
       "custo_base": 14929920,
       "tempo": 384,
       "lucro_base": 7464960,
-      "descricao": "Uma bola de sorvete cremoso em um casquinha crocante."
+      "descricao": "Leve, rápido e fácil de empilhar. Só não tente rodar ele dentro dele mesmo."
     },
     {
       "indice": 7,
-      "nome": "Brownie",
+      "nome": "Máquina Virtual",
       "custo_base": 179159040,
       "tempo": 1536,
       "lucro_base": 89579520,
-      "descricao": "Um pedaço de brownie com cobertura de morango, macio por dentro e crocante por cima."
+      "descricao": "Um computador dentro de outro computador. Inception versão TI."
     },
     {
       "indice": 8,
-      "nome": "Cupcake",
+      "nome": "Data Center",
       "custo_base": 2149908480,
       "tempo": 6144,
       "lucro_base": 1074954240,
-      "descricao": "Um bolinho com cobertura e recheio."
+      "descricao": "Um galpão cheio de barulho, piscas e frio o bastante pra guardar sorvete."
     },
     {
       "indice": 9,
-      "nome": "Bolo de Aniversário",
+      "nome": "Nuvem Quântica",
       "custo_base": 25798901760,
       "tempo": 36864,
       "lucro_base": 29668737024,
-      "descricao": "Um bolo de aniversário decorado com chantilly e velas coloridas."
+      "descricao": "Tão avançada que processa e não processa ao mesmo tempo. Schrödinger aprovaria."
     }
   ]
 }

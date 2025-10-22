@@ -37,5 +37,7 @@ if (_mouse_sobre) {
 			}
 		}
 	}
+} else {
+	efeito_comprar = false
 }
 
